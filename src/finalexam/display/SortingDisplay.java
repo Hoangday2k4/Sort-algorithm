@@ -55,10 +55,12 @@ public class SortingDisplay extends JPanel{
     }
 
     public void resetStats() {
-        sorting.accessCount = 0;
-        sorting.comparisons = 0;
-        sorting.swapCount = 0;
-        sorting.timeExecuted = 0;
+        if (this.sorting != null) {
+            sorting.accessCount = 0;
+            sorting.comparisons = 0;
+            sorting.swapCount = 0;
+            sorting.timeExecuted = 0;
+        }
     }
 
     public void sleep() {

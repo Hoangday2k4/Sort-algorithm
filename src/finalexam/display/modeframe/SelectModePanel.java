@@ -1,8 +1,6 @@
-package finalexam.display.modepanel;
+package finalexam.display.modeframe;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public abstract class SelectModePanel extends JPanel implements ModeInterface {
     protected int arraySize;

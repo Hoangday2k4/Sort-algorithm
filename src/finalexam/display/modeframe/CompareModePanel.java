@@ -1,4 +1,4 @@
-package finalexam.display.modepanel;
+package finalexam.display.modeframe;
 
 import finalexam.defaultsorting.*;
 import finalexam.display.SortingDisplay;

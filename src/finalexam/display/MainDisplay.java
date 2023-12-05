@@ -1,9 +1,9 @@
 package finalexam.display;
 
-import finalexam.display.modeframe.CompareModePanel;
-import finalexam.display.modeframe.CustomCodeModePanel;
-import finalexam.display.modeframe.ModePanel;
-import finalexam.display.modeframe.SingleModePanel;
+import finalexam.display.modepanel.CompareModePanel;
+import finalexam.display.modepanel.CustomCodeModePanel;
+import finalexam.display.modepanel.ModePanel;
+import finalexam.display.modepanel.SingleModePanel;
 
 import javax.swing.*;
 import java.awt.CardLayout;

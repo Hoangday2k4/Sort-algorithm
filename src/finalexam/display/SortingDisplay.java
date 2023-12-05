@@ -7,8 +7,8 @@ import java.awt.image.BufferedImage;
 import java.util.Random;
 
 public class SortingDisplay extends JPanel{
-    private static int width = 799;
-    private static int height = 160;
+    private static int width = 733;
+    private static int height = 365;
     private static final int DELAY = 5;
     private BufferedImage offScreenImage;
 
@@ -26,7 +26,7 @@ public class SortingDisplay extends JPanel{
     }
     private void drawArray(Graphics g) {
         int BAR_WIDTH = width / sorting.values.length;
-        int SHIFT_AMOUNT = 55; // Adjust this value to control the shift
+        int SHIFT_AMOUNT = (width - BAR_WIDTH * sorting.values.length) / 2; // Adjust this value to control the shift
 
         for (int i = 0; i < sorting.values.length; i++) {
             int x = i * BAR_WIDTH + SHIFT_AMOUNT; // Include the shift
@@ -37,6 +37,7 @@ public class SortingDisplay extends JPanel{
             g.drawRect(x, SortingDisplay.height - height, BAR_WIDTH, height);
         }
     }
+
     private void drawStats(Graphics g) {
         g.setColor(Color.RED);
         int yOffset = 20; // Adjust this value to control the vertical spacing

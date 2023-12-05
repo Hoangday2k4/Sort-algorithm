@@ -17,7 +17,7 @@ public class MainFrame {
         frame.setBackground(new Color(255, 255, 255));
 
         // UI components
-        JLabel titleLabel = new JLabel("Sorting Visualization");
+        JLabel titleLabel = new JLabel("Sorting Visualization h");
         titleLabel.setFont(new Font("Arial", Font.BOLD, 20));
 
         JButton singleModeButton = new JButton("Single Mode");

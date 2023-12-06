@@ -44,13 +44,15 @@ public class CompareModePanel extends JPanel implements ModeInterface {
 
     public CompareModePanel() {
         initComponents();
-        this.array1 = SortingDisplay.generateRandomArray(arraySize, 100);
+        int[] tmp = SortingDisplay.generateRandomArray(arraySize, 100);
+
         this.sorting1 = new BubbleSort(array1);
         comparePanel1.add(sorting1.getSortingDisplay());
+        this.array1 = tmp.clone();
 
-        this.array2 = SortingDisplay.generateRandomArray(arraySize, 100);
         this.sorting2 = new BubbleSort(array2);
         comparePanel2.add(sorting2.getSortingDisplay());
+        this.array2 = tmp.clone();
     }
 
     private void initComponents() {
@@ -257,7 +259,7 @@ public class CompareModePanel extends JPanel implements ModeInterface {
     private void compareComboBox1ActionPerformed(ActionEvent evt) {
         Object selectedItem = compareComboBox1.getSelectedItem();
         String selectedText = selectedItem.toString();
-        int[] x = SortingDisplay.generateRandomArray(arraySize, 100);
+        int[] x = this.array1.clone();
 
         // Kiểm tra nếu có sortingDisplay cũ, thì xóa nó đi trước khi thêm mới
         if (sorting1.getSortingDisplay() != null) {
@@ -306,7 +308,7 @@ public class CompareModePanel extends JPanel implements ModeInterface {
     private void compareComboBox2ActionPerformed(ActionEvent evt) {
         Object selectedItem = compareComboBox2.getSelectedItem();
         String selectedText = selectedItem.toString();
-        int[] x = SortingDisplay.generateRandomArray(arraySize, 100);
+        int[] x = this.array2.clone();
 
         // Kiểm tra nếu có sortingDisplay cũ, thì xóa nó đi trước khi thêm mới
         if (sorting2.getSortingDisplay() != null) {

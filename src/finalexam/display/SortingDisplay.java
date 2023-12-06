@@ -9,10 +9,10 @@ import java.util.Random;
 public class SortingDisplay extends JPanel{
     private static int width = 733;
     private static int height = 365;
-    private static final int DELAY = 5;
+    private static final int DELAY = 50;
     private BufferedImage offScreenImage;
-
     public Sorting sorting;
+    private int[] prevArray;
 
     public static void setWidth(int width) {
         SortingDisplay.width = width;
@@ -33,9 +33,15 @@ public class SortingDisplay extends JPanel{
             int height = sorting.values[i];
             g.setColor(Color.BLUE);
             g.fillRect(x, SortingDisplay.height - height, BAR_WIDTH, height);
-            g.setColor(Color.BLACK);
+            if (BAR_WIDTH > 1) {
+                g.setColor(Color.BLACK);
+            } else {
+                g.setColor(Color.BLUE);
+            }
             g.drawRect(x, SortingDisplay.height - height, BAR_WIDTH, height);
         }
+
+        prevArray = sorting.values.clone();
     }
 
     private void drawStats(Graphics g) {
